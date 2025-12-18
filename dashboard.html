@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="doctor-bg">
+
+<header class="header">
+  <h1>Patient Overview</h1>
+  <span class="badge">Live Updates</span>
+</header>
+
+<section class="dashboard">
+
+  <div class="summary-card">
+    <h2 id="patientName">Waiting for patient data…</h2>
+    <p class="timestamp" id="time"></p>
+
+    <div class="summary-grid">
+      <div><strong>BP:</strong> <span id="bp"></span></div>
+      <div><strong>Pulse:</strong> <span id="pulse"></span></div>
+      <div><strong>Oxygen:</strong> <span id="oxygen"></span></div>
+      <div><strong>Sugar:</strong> <span id="sugar"></span></div>
+      <div><strong>Temperature:</strong> <span id="temp"></span></div>
+      <div><strong>Symptoms:</strong> <span id="symptoms"></span></div>
+    </div>
+
+    <p><strong>Notes:</strong> <span id="notes"></span></p>
+  </div>
+
+  <div class="card">
+    <h2>Average Pain Trend</h2>
+
+    <iframe
+      style="background:#21313C;border:none;border-radius:10px;"
+      width="100%"
+      height="420"
+      src="https://charts.mongodb.com/charts-yuvanshi_project-kviwnuh/embed/charts?id=3cab01b6-463b-4a56-a357-7db4a4ff8d66&theme=dark&autoRefresh=true">
+    </iframe>
+  </div>
+
+</section>
+
+<footer class="footer">MongoDB Time-Series • Hackathon Demo</footer>
+
+<script>
+function loadData() {
+  const data = JSON.parse(localStorage.getItem("patientData"));
+  if (!data) return;
+
+  patientName.textContent = data.name;
+  bp.textContent = data.bp;
+  pulse.textContent = data.pulse;
+  oxygen.textContent = data.oxygen + "%";
+  sugar.textContent = data.sugar;
+  temp.textContent = data.temp + " °F";
+  symptoms.textContent = data.symptoms.join(", ");
+  notes.textContent = data.notes;
+  time.textContent = "Last updated: " + data.time;
+}
+
+window.addEventListener("storage", loadData);
+loadData();
+</script>
+
+</body>
+</html>
