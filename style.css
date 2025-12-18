@@ -1,0 +1,88 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+.patient-bg {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.doctor-bg {
+  background: #f4f7fb;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #1e2a33;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #00b4d8;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 8px;
+}
+
+.header {
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.badge {
+  background: #dbeafe;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.dashboard {
+  padding: 30px;
+}
+
+.summary-card, .card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 12px;
+}
